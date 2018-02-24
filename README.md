@@ -34,5 +34,10 @@ Make a small app like uber using mapkit firebase
 ![driver accepted](https://user-images.githubusercontent.com/11647366/36625027-88c7599c-1920-11e8-8102-8d51933fe060.PNG)
 
 
+7-Rider nkow location of driver
+
+
+![1235](https://user-images.githubusercontent.com/11647366/36634335-b1521718-19ab-11e8-9a82-c93a788c0bfb.PNG)
+
 
 
