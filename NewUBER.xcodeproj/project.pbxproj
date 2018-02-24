@@ -15,6 +15,7 @@
 		6941837C203DD3120009D696 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6941837B203DD3120009D696 /* GoogleService-Info.plist */; };
 		69418381203E43FC0009D696 /* ridersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69418380203E43FC0009D696 /* ridersVC.swift */; };
 		69B8C7E7203FA403001E507F /* driversVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B8C7E6203FA403001E507F /* driversVC.swift */; };
+		69D93C462040E7B20081BC15 /* AcceptRideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D93C452040E7B20081BC15 /* AcceptRideVC.swift */; };
 		98C085C59A7A35BB70BBF901 /* Pods_NewUBER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4910DF2526733189ACE71A /* Pods_NewUBER.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		6941837B203DD3120009D696 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		69418380203E43FC0009D696 /* ridersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ridersVC.swift; sourceTree = "<group>"; };
 		69B8C7E6203FA403001E507F /* driversVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = driversVC.swift; sourceTree = "<group>"; };
+		69D93C452040E7B20081BC15 /* AcceptRideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptRideVC.swift; sourceTree = "<group>"; };
 		9D4910DF2526733189ACE71A /* Pods_NewUBER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewUBER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9103AB3F708438547C53496 /* Pods-NewUBER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewUBER.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewUBER/Pods-NewUBER.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				6941836B203DD0290009D696 /* loginSignUpVC.swift */,
 				69418380203E43FC0009D696 /* ridersVC.swift */,
 				69B8C7E6203FA403001E507F /* driversVC.swift */,
+				69D93C452040E7B20081BC15 /* AcceptRideVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69418381203E43FC0009D696 /* ridersVC.swift in Sources */,
+				69D93C462040E7B20081BC15 /* AcceptRideVC.swift in Sources */,
 				6941836C203DD0290009D696 /* loginSignUpVC.swift in Sources */,
 				69B8C7E7203FA403001E507F /* driversVC.swift in Sources */,
 				6941836A203DD0290009D696 /* AppDelegate.swift in Sources */,

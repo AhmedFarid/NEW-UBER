@@ -45,9 +45,9 @@ class driversVC: UITableViewController,CLLocationManagerDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "driverCell", for: indexPath)
         
         let snapshot = rideRequest[indexPath.row]
+        
         if let rideRequestDic = snapshot.value as? [String:AnyObject]{
             if let email = rideRequestDic["email"] as? String {
-                
                 if let lat = rideRequestDic ["lat"] as? Double {
                     if let lon = rideRequestDic ["lon"] as? Double {
                         
@@ -69,6 +69,16 @@ class driversVC: UITableViewController,CLLocationManagerDelegate {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let snapshot = rideRequest[indexPath.row]
+        
+        performSegue(withIdentifier: "AcceptSuge", sender: snapshot)
+        
+    }
+    
+    
+    
     
     @IBAction func logoutBut(_ sender: Any) {
         try? Auth.auth().signOut()
@@ -84,13 +94,22 @@ class driversVC: UITableViewController,CLLocationManagerDelegate {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let accpetVC = segue.destination as? AcceptRideVC {
+            if let snapshot = sender as? DataSnapshot {
+                if let rideRequestDic = snapshot.value as? [String:AnyObject]{
+                    if let email = rideRequestDic["email"] as? String {
+                        if let lat = rideRequestDic ["lat"] as? Double {
+                            if let lon = rideRequestDic ["lon"] as? Double {
+                                accpetVC.requesEmail = email
+                                let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                                accpetVC.requestLocation = location
+                                accpetVC.driverlocation = drivreLocation
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
 }

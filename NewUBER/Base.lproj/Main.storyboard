@@ -197,10 +197,59 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Cwz-50-Jfo" kind="show" identifier="AcceptSuge" id="LW9-4d-spj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3is-LE-BwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1474" y="689"/>
+        </scene>
+        <!--Accept RideVC-->
+        <scene sceneID="Bc7-rm-CHe">
+            <objects>
+                <viewController id="Cwz-50-Jfo" customClass="AcceptRideVC" customModule="NewUBER" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p34-VH-bDb"/>
+                        <viewControllerLayoutGuide type="bottom" id="wqi-bH-JyD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JpL-fq-drB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Z5T-dG-8uz">
+                                <rect key="frame" x="0.0" y="64" width="320" height="404"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="404" id="feg-Zl-Bbu"/>
+                                    <constraint firstAttribute="width" constant="320" id="nT7-50-PWx"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hd-ng-hYP">
+                                <rect key="frame" x="119" y="530" width="83" height="30"/>
+                                <state key="normal" title="Accept Ride"/>
+                                <connections>
+                                    <action selector="AcceptBUt:" destination="Cwz-50-Jfo" eventType="touchUpInside" id="Hpg-dg-PjJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z5T-dG-8uz" firstAttribute="leading" secondItem="JpL-fq-drB" secondAttribute="leading" id="67z-jN-Zji"/>
+                            <constraint firstItem="3Hd-ng-hYP" firstAttribute="top" secondItem="Z5T-dG-8uz" secondAttribute="bottom" constant="62" id="BmY-fU-wc7"/>
+                            <constraint firstItem="wqi-bH-JyD" firstAttribute="top" secondItem="Z5T-dG-8uz" secondAttribute="bottom" constant="100" id="VAm-uF-fDT"/>
+                            <constraint firstItem="Z5T-dG-8uz" firstAttribute="top" secondItem="p34-VH-bDb" secondAttribute="bottom" id="ZOe-ra-agP"/>
+                            <constraint firstItem="3Hd-ng-hYP" firstAttribute="centerX" secondItem="JpL-fq-drB" secondAttribute="centerX" id="d6K-9Z-T9x"/>
+                            <constraint firstAttribute="trailing" secondItem="Z5T-dG-8uz" secondAttribute="trailing" id="xhR-A5-Etx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Accept" destination="3Hd-ng-hYP" id="Dze-3s-no5"/>
+                        <outlet property="Map" destination="Z5T-dG-8uz" id="RS0-OC-box"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gP5-6k-UtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2303" y="689"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oXl-t0-yNr">
