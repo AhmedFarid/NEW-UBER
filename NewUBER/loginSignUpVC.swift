@@ -32,8 +32,24 @@ class loginSignUpVC: UIViewController {
                             if error != nil  {
                                 self.displayAlert(title: "Error", message: error!.localizedDescription)
                             }else {
-                                print("Seccess")
-                             self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                                if self.switchBut.isOn {
+                                    //Driver
+                                    
+                                    let request = Auth.auth().currentUser?.createProfileChangeRequest()
+                                    request?.displayName = "Driver"
+                                    request?.commitChanges(completion: nil)
+                                    self.performSegue(withIdentifier: "driverSuge", sender: nil)
+                                }else {
+                                    //Rider
+                                    
+                                    let request = Auth.auth().currentUser?.createProfileChangeRequest()
+                                    request?.displayName = "Rider"
+                                    request?.commitChanges(completion: nil)
+                                    
+                                    self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                                }
+                                
+                                
                             }
                         })
                     }else {
@@ -42,8 +58,18 @@ class loginSignUpVC: UIViewController {
                             if error != nil  {
                                 self.displayAlert(title: "Error", message: error!.localizedDescription)
                             }else {
-                                print("Seccess")
-                                self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                                
+                                if user?.displayName == "Driver" {
+                                    //Driver
+                                    print("driver")
+                                    self.performSegue(withIdentifier: "driverSuge", sender: nil)
+                                }else {
+                                    //Rider
+                                    self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                                }
+                                
+                                
+                                
                             }
                         })
                     }
