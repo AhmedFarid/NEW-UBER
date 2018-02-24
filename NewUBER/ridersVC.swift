@@ -38,6 +38,23 @@ class ridersVC: UIViewController , CLLocationManagerDelegate {
                             self.driverLocation = CLLocationCoordinate2D(latitude: driverLat, longitude: driverLon)
                             self.driverOnTheWay = true
                             self.displayDriverAndRider()
+                            if let email = Auth.auth().currentUser?.email {
+                                Database.database().reference().child("RideRequests").queryOrdered(byChild: "email").queryEqual(toValue: email).observe(.childChanged, with: { (snapshot) in
+                                    if let riderRequestDiec = snapshot.value as? [String:AnyObject] {
+                                        if let driverLat = riderRequestDiec["driverLat"] as? Double {
+                                            if let driverLon = riderRequestDiec["driverLon"] as? Double {
+                                                self.driverLocation = CLLocationCoordinate2D(latitude: driverLat, longitude: driverLon)
+                                                self.driverOnTheWay = true
+                                                self.displayDriverAndRider()
+                                                
+                                            }
+                                        }
+                                    }
+                                    
+                                    
+                                })
+                            }
+
                             
                         }
                     }
@@ -81,6 +98,7 @@ class ridersVC: UIViewController , CLLocationManagerDelegate {
             
             if uberHasBeenCalled {
                 displayDriverAndRider()
+                
             }else {
                 let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
                 
